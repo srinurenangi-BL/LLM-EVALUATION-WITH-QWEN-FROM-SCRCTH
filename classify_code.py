@@ -88,13 +88,16 @@ def main():
         current_count += 1 
 
         user_id = row["User ID"]
+        qsn_no = row["QSN No"]
         question_text = str(row["Question"])
         code_snippet = str(row["Actual Code"])
-
-        print(f"🤖 Processing row {current_count}/{final_count} (User: {user_id})...", end="\r")
-
         detected_lang = detect_language_from_context(question_text, code_snippet)
         detected_languages.append(detected_lang)
+        print(f"📝 [Record {current_count}/{final_count}]")
+        print(f"   👤 User ID   : {user_id}")
+        print(f"   ❓ QSN No    : {qsn_no}")
+        print(f"   🚀 Language  : {detected_lang}")
+        print("-" * 50)
         
     filtered_df["Detected Language"] = detected_languages
     print(" " * 70, end="\r") 
