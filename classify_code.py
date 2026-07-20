@@ -4,7 +4,7 @@ import requests
 import os
 import pandas as pd
 
-def detect_language_from_context(question: str, code: str, host: str = "http://localhost:11434") -> str:
+def evaluate_student_submission(question: str, code: str, host: str = "http://localhost:11434") -> str:
     url = f"{host}/api/chat"
     user_prompt = f"Question Context / Assignment Prompt:\n{question}\n\nStudent's Code Snippet:\n{code}"
 
@@ -14,11 +14,14 @@ def detect_language_from_context(question: str, code: str, host: str = "http://l
             {
                 "role": "system",
                 "content": (
-                    "You are an expert programming language detector. Analyze the given question context "
-                    "and the code snippet, then return ONLY the name of the programming language. "
-                    "Do not include any explanation, introductory text, markdown formatting, or extra characters. "
-                    "Examples of valid outputs: 'Python', 'JavaScript', 'C++', 'Java', 'HTML', 'SQL', 'Rust'. "
-                    "If you are completely unsure, return 'Unknown'."
+                    "You are an expert automated computer science teaching assistant and code evaluator.\n"
+                    "Analyze the given question context and the student's code snippet. You must evaluate the work "
+                    "and provide your complete response EXACTLY in the following structured format without using any "
+                    "markdown ticks, wrappers, thinking blocks, or conversational filler lines:\n\n"
+                    "LANGUAGE: [Identified programming language.\n"
+                    "VERDICT: [CORRECT or INCORRECT]\n"
+                    "EXPLANATION: [A brief, clear analysis explaining what the student wrote, whether it is right or wrong, "
+                    "and precisely where they made a mistake if any errors exist.]"
                 )
             },
             {
@@ -32,24 +35,41 @@ def detect_language_from_context(question: str, code: str, host: str = "http://l
         }
     }
 
+    default_result = {"Language": "Unknown", "Verdict": "Unknown", "Explanation": "Failed to extract text."}
+
     try:
-        response = requests.post(url, json=payload, timeout=20)
+        response = requests.post(url, json=payload, timeout=30)
         response.raise_for_status()
         result = response.json()
-        language = result.get("message", {}).get("content", "").strip()
-        language = language.replace("`", "").replace("'", "").replace('"', '')
-        return language
+        raw_content = result.get("message", {}).get("content", "").strip()
+
+
+        parsed_data = {}
+        for line in raw_content.split('\n'):
+            if line.startswith("LANGUAGE:"):
+                parsed_data["Language"] = line.replace("LANGUAGE:", "").strip()
+            elif line.startswith("VERDICT:"):
+                parsed_data["Verdict"] = line.replace("VERDICT:", "").strip()
+            elif line.startswith("EXPLANATION:"):
+                parsed_data["Explanation"] = line.replace("EXPLANATION:", "").strip()
+
+        final_output = {
+            "Language": parsed_data.get("Language", "Unknown"),
+            "Verdict": parsed_data.get("Verdict", "Unknown"),
+            "Explanation": parsed_data.get("Explanation", raw_content)
+        }
+        return final_output
 
     except requests.exceptions.ConnectionError:
-        return "ERROR: Couldn't Connect To Ollama"
+        return {"Language": "ERROR", "Verdict": "ERROR", "Explanation": "Couldn't Connect To Ollama"}
     except requests.exceptions.Timeout:
-        return "ERROR: Request timed out."
+        return {"Language": "ERROR", "Verdict": "ERROR", "Explanation": "Request timed out."}
     except Exception as e:
-        return f"ERROR: {type(e).__name__}"
+        return {"Language": "ERROR", "Verdict": "ERROR", "Explanation": f"Error: {type(e).__name__}"}
 
     
 def main():
-    TARGET_FILE = "Practice App-API Testing Report.xlsx"
+    TARGET_FILE = "sheet-1.xlsx"
     
     if not os.path.exists(TARGET_FILE):
         print(f"❌ Error: The file '{TARGET_FILE}' was not found in this folder.")
@@ -81,6 +101,8 @@ def main():
     print(f"📊 Rows with valid code snippets to process: {final_count}")
 
     detected_languages = []
+    evaluation_verdicts = []
+    evaluation_explanations = []
     current_count = 0
 
     print("\n--- Running Language Detection")
@@ -91,16 +113,24 @@ def main():
         qsn_no = row["QSN No"]
         question_text = str(row["Question"])
         code_snippet = str(row["Actual Code"])
-        detected_lang = detect_language_from_context(question_text, code_snippet)
-        detected_languages.append(detected_lang)
+
+        eval_metrics = evaluate_student_submission(question_text, code_snippet)
+        detected_languages.append(eval_metrics["Language"])
+        evaluation_verdicts.append(eval_metrics["Verdict"])
+        evaluation_explanations.append(eval_metrics["Explanation"])
+
         print(f"📝 [Record {current_count}/{final_count}]")
-        print(f"   👤 User ID   : {user_id}")
-        print(f"   ❓ QSN No    : {qsn_no}")
-        print(f"   🚀 Language  : {detected_lang}")
-        print("-" * 50)
+        print(f"   👤 User ID      : {user_id}")
+        print(f"   ❓ QSN No       : {qsn_no}")
+        print(f"   🚀 Language     : {eval_metrics['Language']}")
+        print(f"   ⚖️  Verdict      : {eval_metrics['Verdict']}")
+        print(f"   📖 Explanation  : {eval_metrics['Explanation']}")
+        print("-" * 60)
         
     filtered_df["Detected Language"] = detected_languages
-    print(" " * 70, end="\r") 
+    filtered_df["Evaluation Verdict"] = evaluation_verdicts
+    filtered_df["Technical Explanation"] = evaluation_explanations
+
     print("✅ All spreadsheet rows successfully analyzed!")
     output_file = f"Classified_{TARGET_FILE}"
     
