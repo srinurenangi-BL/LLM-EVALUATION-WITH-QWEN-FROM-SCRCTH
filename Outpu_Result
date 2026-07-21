@@ -1,548 +1,878 @@
 ✅ Data sheet successfully loaded!
-✅ All target columns verified successfully!
-📊 Rows with valid code snippets to process: 66
+📊 Rows to process: 66
+🎯 Mandated Semester Language Constraints Locked To: Java
+================================================================================
 
---- Running Deep Code Evaluation Loop
-📝 [Record 1/66]
-   👤 User ID      : user-00036043
-   ❓ QSN No       : 1
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code correctly reads the city code and sequence number as inputs, combines them into a booking ID using a character array, and then converts it back to a string. The use of a StringBuilder for concatenation would be more efficient in this case, but the provided solution is optimal given the constraints.
-------------------------------------------------------------
-📝 [Record 2/66]
-   👤 User ID      : user-00036044
-   ❓ QSN No       : 2
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and follows the logic required by the assignment. However, it does not meet the requirement of using String.concat or a StringBuilder append chain to produce the final booking id. Instead, it uses the append method of StringBuilder in reverse order, which is less efficient than using String.concat or directly appending with '+' operator.
-------------------------------------------------------------
-📝 [Record 3/66]
-   👤 User ID      : user-00036045
-   ❓ QSN No       : 3
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 80/100 (25/40/15)
-   🏷️  Error Class  : Syntax Error
-   📖 Explanation  : The student's code has a syntax error due to missing semicolons at the end of several lines. Additionally, the variable names are not descriptive and could be improved for clarity.
-------------------------------------------------------------
-📝 [Record 4/66]
-   👤 User ID      : user-00036047
-   ❓ QSN No       : 4
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code correctly reads the city code and sequence number as separate inputs, converts them to strings (if necessary), and combines them using a StringBuilder. This approach avoids using the plus operator for string concatenation and meets all the requirements of the assignment. The efficiency score is moderate because while the use of StringBuilder is efficient, it could be optimized further by directly appending the numeric sequence without converting it to a String first.
-------------------------------------------------------------
-📝 [Record 5/66]
-   👤 User ID      : user-00036048
-   ❓ QSN No       : 5
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code correctly reads the city code and sequence number as separate inputs, combines them using a StringBuilder, and prints the final booking ID. The use of StringBuilder for string concatenation is appropriate and efficient. There are no syntax errors or logical fallacies in the code.
-------------------------------------------------------------
-📝 [Record 6/66]
-   👤 User ID      : user-00026040
-   ❓ QSN No       : 6
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 80/100 (25/40/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code has a logical error in the method name 'apend' which should be 'append'. Additionally, there is a typo in 'System.oot.println', which should be 'System.out.println'. The logic of combining the city code and sequence number using StringBuilder is correct.
-------------------------------------------------------------
-📝 [Record 7/66]
-   👤 User ID      : user-00096240
-   ❓ QSN No       : 7
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 10/100 (10/0/0)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student has provided an empty main method without any logic to solve the problem. The task requires reading a city code and a sequence number, converting them to strings if necessary, and then combining them into a booking id using String.concat or StringBuilder. The current code does not address any of these requirements.
-------------------------------------------------------------
-📝 [Record 8/66]
-   👤 User ID      : user-00096340
-   ❓ QSN No       : 8
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 10/100 (10/0/0)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code does not address the assignment prompt at all. Instead of reading city code and sequence number as inputs and combining them into a booking id, it simply prints a string to the console.
-------------------------------------------------------------
-📝 [Record 9/66]
-   👤 User ID      : user-00096341
-   ❓ QSN No       : 9
-   🚀 Language     : C++
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is correct and follows the assignment requirements. It uses a StringBuilder-like approach with `std::string`'s `append` method to combine the city code and sequence number into a booking ID without using the plus operator for string concatenation. The code is efficient in terms of time complexity as it performs a single pass through both strings. Therefore, it meets all the criteria specified in the assignment prompt.
-------------------------------------------------------------
-📝 [Record 10/66]
-   👤 User ID      : user-00096342
-   ❓ QSN No       : 10
-   🚀 Language     : Python
-   ⚖️  Total Grade  : 35/100 (20/10/5)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code uses the plus operator for string concatenation, which is not allowed according to the assignment prompt. The logic of the program is incorrect because it does not follow the requirements of using String.concat or a StringBuilder append chain.
-------------------------------------------------------------
-📝 [Record 11/66]
-   👤 User ID      : user-00096343
-   ❓ QSN No       : 11
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and follows the logic required by the assignment. It uses a StringBuilder to concatenate the city code and sequence number, which is an efficient approach. However, the program does not output the final booking ID, so it lacks the necessary print statement at the end.
-------------------------------------------------------------
-📝 [Record 12/66]
-   👤 User ID      : user-00096354
-   ❓ QSN No       : 12
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and follows the logic required by the assignment. It uses a StringBuilder to concatenate the city code and sequence number, which meets the requirement of not using the plus operator for string concatenation. The efficiency score is moderate because while the use of StringBuilder is efficient for string manipulation, it could be optimized further if the booking IDs are very large.
-------------------------------------------------------------
-📝 [Record 13/66]
-   👤 User ID      : user-00096355
-   ❓ QSN No       : 13
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 65/100 (25/30/10)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code has a logical fallacy in the condition of the if statement. The length of a string cannot be less than 0; it should be greater than or equal to 0. Additionally, the efficiency score is low because the program unnecessarily checks for an impossible condition.
-------------------------------------------------------------
-📝 [Record 14/66]
-   👤 User ID      : user-00096356
-   ❓ QSN No       : 14
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 80/100 (25/40/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code has a logical fallacy in that it does not handle cases where the name contains multiple spaces between words. The current implementation will treat each space as a separate character, which is likely not the intended behavior. Additionally, there are minor syntax errors such as incorrect method names (e.g., 'string' instead of 'String', 'system.out.println' instead of 'System.out.println') that prevent the code from compiling.
-------------------------------------------------------------
-📝 [Record 15/66]
-   👤 User ID      : user-00096357
-   ❓ QSN No       : 15
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 65/100 (25/30/10)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The code has correct syntax and logic for reading a full name, trimming extra spaces, and extracting the first and last characters. However, it does not print these characters as required by the assignment prompt. The efficiency score is low because it reads the entire line but only uses the first and last characters.
-------------------------------------------------------------
-📝 [Record 16/66]
-   👤 User ID      : user-00096358
-   ❓ QSN No       : 16
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 40/100 (25/10/5)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code does not meet the requirements of printing each character of a string individually. Instead, it prints the entire string and then individual characters. The logic is flawed as it does not iterate through the string to print each character.
-------------------------------------------------------------
-📝 [Record 17/66]
-   👤 User ID      : user-00096359
-   ❓ QSN No       : 17
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 65/100 (25/30/10)
-   🏷️  Error Class  : Edge-Case Failure
-   📖 Explanation  : The code has a syntax error due to an extra space before the closing brace of the main method. Additionally, there is a logical issue because the loop condition should be less than the length of the string (i < input.length()) instead of less than or equal to the length. This will cause an IndexOutOfBoundsException when trying to access the character at index input.length(). The efficiency score is low due to the unnecessary iteration over the last index which results in printing a newline character.
-------------------------------------------------------------
-📝 [Record 18/66]
-   👤 User ID      : user-00096360
-   ❓ QSN No       : 18
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and logically sound. It correctly iterates through each character of the string 'Hello' and prints it individually. However, the efficiency score is low because the loop increments by 1 in each iteration, which is unnecessary since the increment operation (i = i + 1) can be simplified to (i++). This minor optimization could make a difference in performance for very large strings.
-------------------------------------------------------------
-📝 [Record 19/66]
-   👤 User ID      : user-00096361
-   ❓ QSN No       : 19
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 25/100 (25/0/0)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code checks if the product code starts or ends with a space and prints an error message if it does. However, the assignment requires trimming spaces at both ends and converting the code to upper case before saving. The current implementation only checks for leading and trailing spaces without normalizing them.
-------------------------------------------------------------
-📝 [Record 20/66]
-   👤 User ID      : user-00096362
-   ❓ QSN No       : 20
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 40/100 (25/10/5)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code attempts to normalize the product code by replacing 'a' with 'A' and 'b' with 'B'. However, this approach is incorrect because it does not handle trimming spaces at both ends or converting the entire string to upper case. The correct solution should use methods like `trim()` and `toUpperCase()`. Additionally, the logic for replacing characters is flawed as it only targets specific characters ('a' and 'b') instead of normalizing the entire string.
-------------------------------------------------------------
-📝 [Record 21/66]
-   👤 User ID      : user-00096363
-   ❓ QSN No       : 21
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is correct and follows the requirements of the assignment. It uses the `String.join()` method to merge an array of words into a sentence, which is exactly what was asked for. The syntax is perfect, and the logic is sound. However, the efficiency could be improved by using a StringBuilder if the array were very large, as String concatenation in a loop can be inefficient.
-------------------------------------------------------------
-📝 [Record 22/66]
-   👤 User ID      : user-00096364
-   ❓ QSN No       : 22
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 65/100 (30/20/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code concatenates the words without spaces, resulting in an incorrect tagline. The logic should include a space between each word to form a proper sentence.
-------------------------------------------------------------
-📝 [Record 23/66]
-   👤 User ID      : user-00096365
-   ❓ QSN No       : 23
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 40/100 (25/10/5)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code attempts to detect a suspicious substring within a transaction string. However, it only checks if the first character of the transaction matches the first character of the suspicious word and sets `isFraud` to true without further checking. This logic is incorrect because it does not actually search for the entire substring 'SUSPECT' in the transaction string. Additionally, the variable `isFraud` is used but never declared or initialized before its use.
-------------------------------------------------------------
-📝 [Record 24/66]
-   👤 User ID      : user-00096366
-   ❓ QSN No       : 24
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 70/100 (25/30/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code has a syntax error due to the undeclared variable 'isFraud'. It should be declared as a boolean before use. Additionally, while the logic checks if the transaction starts with the suspicious pattern correctly, it does not handle other potential fraud indicators such as the presence of a specific ID or amount threshold.
-------------------------------------------------------------
-📝 [Record 25/66]
-   👤 User ID      : user-00096367
-   ❓ QSN No       : 25
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 70/100 (25/30/15)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student correctly used the `concat` method to combine two strings without using the `+` operator. The code is syntactically correct and logically sound. However, it could be more efficient by avoiding multiple calls to `concat`, which creates a new string each time. An optimal solution would use a `StringBuilder` for better performance.
-------------------------------------------------------------
-📝 [Record 26/66]
-   👤 User ID      : user-00096368
-   ❓ QSN No       : 26
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 70/100 (25/30/15)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student correctly used the `concat` method to combine two strings without using the + operator. The code is syntactically correct and logically sound. However, it could be more efficient by avoiding multiple calls to `concat`, which creates a new string each time. An optimal solution would use a `StringBuilder` for better performance.
-------------------------------------------------------------
-📝 [Record 27/66]
-   👤 User ID      : user-00096369
-   ❓ QSN No       : 27
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and logically sound for checking if a customer ID is a palindrome. The use of `StringBuilder` to reverse the string is efficient, although it could be optimized further by comparing characters from both ends towards the center instead of creating a new reversed string.
-------------------------------------------------------------
-📝 [Record 28/66]
-   👤 User ID      : user-00096370
-   ❓ QSN No       : 28
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 70/100 (30/25/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code attempts to validate a customer ID for being a palindrome. The logic is mostly correct, but there are two issues: (1) the method name `isPalindromeWrong` suggests that it checks if the ID is not a palindrome, which contradicts the implementation; and (2) the comparison of strings using `==` instead of `.equals()` leads to incorrect results because `==` compares object references, not string content. The efficiency could be improved by avoiding creating a new reversed string.
-------------------------------------------------------------
-📝 [Record 29/66]
-   👤 User ID      : user-00096371
-   ❓ QSN No       : 29
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 70/100 (30/25/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student has implemented a simple payment strategy using the Strategy pattern, which is correct. However, the implementation lacks support for other payment strategies such as PayPal or Bank Transfer. The OrderProcessor class should be designed to accept any payment strategy that implements an interface, not just CreditCardPayment. Additionally, the efficiency of this code could be improved by avoiding unnecessary object creation and method calls.
-------------------------------------------------------------
-📝 [Record 30/66]
-   👤 User ID      : user-00096372
-   ❓ QSN No       : 30
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and logically sound. It reads a complaint message from the user, counts the frequency of each vowel (ignoring case), and prints the count for each vowel. However, the efficiency can be improved by using a single loop to check both lowercase and uppercase vowels simultaneously.
-------------------------------------------------------------
-📝 [Record 31/66]
-   👤 User ID      : user-00096373
-   ❓ QSN No       : 31
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 95/100 (30/45/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The code is syntactically correct and logically sound. It reads a sentence, converts it to lowercase, initializes a map for vowel counts, iterates through the sentence, and updates the count for each vowel. The output is also correct. However, there's an efficiency improvement that can be made by converting the sentence to lowercase only once before the loop starts.
-------------------------------------------------------------
-📝 [Record 32/66]
-   👤 User ID      : user-00096374
-   ❓ QSN No       : 32
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code correctly reads an integer from the user and prints a multiplication table for that number using a while loop. The syntax is correct, and the logic follows the requirements of the assignment. However, the efficiency can be improved by removing the redundant 'n' print statement inside the loop, as it is printed before each multiplication operation.
-------------------------------------------------------------
-📝 [Record 33/66]
-   👤 User ID      : user-00096375
-   ❓ QSN No       : 33
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 70/100 (30/25/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code correctly reads an integer from the user and prints a multiplication table for that number. However, the loop only goes up to n x 9 (i < 10), not n x 10 as required by the assignment prompt. Additionally, the efficiency could be improved by using a more descriptive variable name instead of 'product' and adding comments for better readability.
-------------------------------------------------------------
-📝 [Record 34/66]
-   👤 User ID      : user-00096376
-   ❓ QSN No       : 34
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 90/100 (30/45/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code has correct syntax. However, there is a logical fallacy in the condition where the employment status is compared using '=='. In Java, strings should be compared using the .equals() method instead of '=='. Additionally, the efficiency can be improved by reducing nested if-else statements.
-------------------------------------------------------------
-📝 [Record 35/66]
-   👤 User ID      : user-00096377
-   ❓ QSN No       : 35
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 70/100 (30/25/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code has correct syntax. However, the logic is flawed because it does not properly handle the conditions for loan approval based on credit score and income. Additionally, the switch statement falls through to all cases without a break statement, which is intended behavior but may not be what was intended in this context.
-------------------------------------------------------------
-📝 [Record 36/66]
-   👤 User ID      : user-00096378
-   ❓ QSN No       : 36
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 90/100 (30/45/15)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code demonstrates the use of for, while, and do-while loops correctly. The logic for printing patterns and sequences is sound. However, there are a few areas where efficiency can be improved. For example, in the Fibonacci sequence method, the variable `nextTerm` could be declared outside the loop to avoid recalculating it on each iteration. Additionally, the countdown method could use a simpler approach by decrementing the start value directly instead of using an if statement. Overall, the code is well-structured and demonstrates good understanding of loops.
-------------------------------------------------------------
-📝 [Record 37/66]
-   👤 User ID      : user-00096379
-   ❓ QSN No       : 37
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 60/100 (30/20/10)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code snippet demonstrates a basic while loop that prints numbers from 1 to 5. However, it does not fulfill the requirement of printing patterns and sequences for dashboards as specified in the assignment prompt. The logic is correct but the implementation is too simple and lacks complexity needed for pattern or sequence generation.
-------------------------------------------------------------
-📝 [Record 38/66]
-   👤 User ID      : user-00096380
-   ❓ QSN No       : 38
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code correctly extracts the first and last characters from user input using the charAt method. The logic is sound, and the code handles edge cases such as empty input. However, there is an unnecessary else block that can be removed for cleaner code.
-------------------------------------------------------------
-📝 [Record 39/66]
-   👤 User ID      : user-00086392
-   ❓ QSN No       : 39
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and logically sound. It correctly extracts the first and last characters from a string using the `substring` method and prints them. However, the efficiency can be improved by avoiding unnecessary string creation if this code were to be part of a larger program that processes multiple inputs.
-------------------------------------------------------------
-📝 [Record 40/66]
-   👤 User ID      : user-00086393
-   ❓ QSN No       : 40
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and logically sound. It correctly reverses the input string using Java's StringBuilder class, which is an efficient method for reversing strings in Java. The use of a loop to reverse the string from end to start is not explicitly shown but is implied by the use of StringBuilder's reverse() method.
-------------------------------------------------------------
-📝 [Record 41/66]
-   👤 User ID      : user-00086395
-   ❓ QSN No       : 41
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The code is syntactically correct and logically sound. It correctly counts the frequency of each character in a given string, ignoring spaces and case sensitivity. However, it can be optimized for efficiency by using a HashMap to store the count of characters instead of nested loops.
-------------------------------------------------------------
-📝 [Record 42/66]
-   👤 User ID      : user-00086311
-   ❓ QSN No       : 42
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The code is syntactically correct and logically finds the maximum value in an array. However, it can be optimized for efficiency by using a more efficient algorithm or data structure.
-------------------------------------------------------------
-📝 [Record 43/66]
-   👤 User ID      : user-00086395
-   ❓ QSN No       : 43
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 80/100 (25/40/15)
-   🏷️  Error Class  : Syntax Error
-   📖 Explanation  : The student's code has a syntax error in the line where the variable 'mid' is calculated. The division operator '/' should be enclosed in parentheses to ensure correct order of operations. Additionally, the efficiency score is low because the binary search algorithm can be optimized further.
-------------------------------------------------------------
-📝 [Record 44/66]
-   👤 User ID      : user-00016326
-   ❓ QSN No       : 44
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 80/100 (25/40/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code has a logical fallacy in the `toString` method of the `User` class. The `id` field is declared as `public string id;`, which should be `private String id;` to follow Java naming conventions and encapsulation principles. Additionally, the `Efficiency_Score` is low because the `toString` method does not utilize any efficient data structures or algorithms for object representation.
-------------------------------------------------------------
-📝 [Record 45/66]
-   👤 User ID      : user-00016315
-   ❓ QSN No       : 45
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 65/100 (25/30/10)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student correctly implemented an interface and an abstract class, but there is a logical fallacy in the inheritance of the Circle class. A class cannot extend multiple classes in Java; it can only extend one class and implement multiple interfaces. The correct syntax for extending a class and implementing an interface should be: `class Circle extends Shape implements Printable {`. Additionally, the efficiency score is low because the implementation of the print method uses unnecessary quotation marks around the string.
-------------------------------------------------------------
-📝 [Record 46/66]
-   👤 User ID      : user-00016314
-   ❓ QSN No       : 46
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code correctly implements the Fibonacci sequence. It has proper syntax, correct logic for generating and printing the sequence, and is efficient in terms of space complexity (O(1)). The only improvement could be to add a return type to the `printFibonacci` method if it were intended to return the sequence as an array or list.
-------------------------------------------------------------
-📝 [Record 47/66]
-   👤 User ID      : user-00016317
-   ❓ QSN No       : 47
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student has correctly implemented constructor overloading in Java. The code is syntactically correct, logically sound, and demonstrates the concept effectively. However, there is a minor efficiency issue: the `Student` class could be made more efficient by initializing the fields directly within the constructors instead of using setters or additional methods to set them after object creation.
-------------------------------------------------------------
-📝 [Record 48/66]
-   👤 User ID      : user-00016323
-   ❓ QSN No       : 48
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and logically sound. It demonstrates the use of an anonymous class to handle a button click event in a GUI application. However, there is room for improvement in terms of efficiency, as creating a new JFrame and JButton every time the program runs could be resource-intensive if this were part of a larger application.
-------------------------------------------------------------
-📝 [Record 49/66]
-   👤 User ID      : user-00016327
-   ❓ QSN No       : 49
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 70/100 (25/30/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code has a logical error in the instantiation of the `ButtonClickHandler` class. The correct class name should be 'ButtonClickHandler' instead of 'ButtonClickhandler'. This is a case sensitivity issue that will cause a compile-time error.
-------------------------------------------------------------
-📝 [Record 50/66]
-   👤 User ID      : user-00016320
-   ❓ QSN No       : 50
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 80/100 (25/40/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code attempts to sort an array of strings using the insertion sort algorithm. The syntax is mostly correct, but there are a few issues. The main problem is that the inventory array is declared as a String, not as an array of Strings. This causes a compile-time error. Additionally, the efficiency score is low because the insertion sort algorithm has a time complexity of O(n^2), which may not be efficient for large inventories.
-------------------------------------------------------------
-📝 [Record 51/66]
-   👤 User ID      : user-00016322
-   ❓ QSN No       : 51
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The code is syntactically correct and logically sound. It correctly assigns a tier based on whether the reading is even or odd. However, it can be made more efficient by removing the unnecessary import of `Scanner` if it's not used elsewhere in the program.
-------------------------------------------------------------
-📝 [Record 52/66]
-   👤 User ID      : user-00016323
-   ❓ QSN No       : 52
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 35/100 (20/10/5)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code has a syntax error due to the misplaced semicolon after the declaration of 'result'. Additionally, it only prints multiplication tables up to 5 instead of being batch-processed for all numbers from 1 to N. The efficiency is low as it does not utilize any loops or arrays to handle multiple inputs.
-------------------------------------------------------------
-📝 [Record 53/66]
-   👤 User ID      : user-00016324
-   ❓ QSN No       : 53
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is correct and follows the requirements of generating a pyramid pattern using stars. It uses proper syntax, logic for printing spaces and stars in each row, and handles user input gracefully. The efficiency could be improved by removing the hardcoded default value for rows when reading from the scanner.
-------------------------------------------------------------
-📝 [Record 54/66]
-   👤 User ID      : user-00016325
-   ❓ QSN No       : 54
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 95/100 (30/45/20)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code has correct syntax and structure. However, there is a logical fallacy in the `checkApproval` method. The condition to check if an order should be approved is always true because it returns true regardless of whether the total amount is greater than or equal to 100. This means that all orders will be approved, which is likely not the intended behavior.
-------------------------------------------------------------
-📝 [Record 55/66]
-   👤 User ID      : user-00016326
-   ❓ QSN No       : 55
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is well-structured and follows the assignment requirements. It correctly extends the Employee class, overrides methods, and demonstrates polymorphism. The use of DecimalFormat for formatting currency is appropriate. However, there is room for improvement in terms of efficiency, as creating a new DecimalFormat instance each time it's needed could be optimized.
-------------------------------------------------------------
-📝 [Record 56/66]
-   👤 User ID      : user-00016327
-   ❓ QSN No       : 56
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is well-structured and follows best practices. It correctly implements inheritance, polymorphism, and encapsulation. The use of `DecimalFormat` for formatting currency is appropriate. The code is efficient in terms of resource usage and performance. There are no syntax errors or logical fallacies present.
-------------------------------------------------------------
-📝 [Record 57/66]
-   👤 User ID      : user-00016328
-   ❓ QSN No       : 57
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student correctly implemented the `equals` and `hashCode` methods based on the `studentId`, which is a unique identifier for each student. The logic ensures that two students are considered equal if they have the same `studentId`. The efficiency of the code is adequate, as it uses `Objects.equals` and `Objects.hash` to handle null values and ensure proper hashing. There are no syntax errors or logical fallacies in the code.
-------------------------------------------------------------
-📝 [Record 58/66]
-   👤 User ID      : user-00016329
-   ❓ QSN No       : 58
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student has implemented a ConfigService Singleton correctly. The code follows the Singleton pattern using the Initialization-on-demand holder idiom, which is thread-safe and efficient. There are no syntax errors or logical fallacies in the implementation. However, the efficiency score could be higher if the configuration properties were loaded from an external file instead of being hardcoded, as this would make the application more flexible and easier to maintain.
-------------------------------------------------------------
-📝 [Record 59/66]
-   👤 User ID      : user-00016330
-   ❓ QSN No       : 59
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 65/100 (30/20/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student has implemented a Bubble Sort algorithm, which is not related to the Factory Pattern for multiple file exporters. The code does not follow the assignment prompt and instead focuses on sorting an array using Bubble Sort.
-------------------------------------------------------------
-📝 [Record 60/66]
-   👤 User ID      : user-00016331
-   ❓ QSN No       : 60
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and logically sound. It creates a JFrame with a button that increments a counter each time it is clicked and prints the count to the console. The efficiency score reflects the use of an inner class for the ActionListener, which is appropriate in this context.
-------------------------------------------------------------
-📝 [Record 61/66]
-   👤 User ID      : user-000163285
-   ❓ QSN No       : 61
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 90/100 (30/45/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student correctly implemented a Singleton pattern with a private constructor, static instance, and getInstance() method. However, the logic in the getInstance() method is flawed because it does not handle the case where multiple threads might access the method simultaneously, leading to potential issues with thread safety. The efficiency score reflects that while the code is syntactically correct, it lacks proper synchronization mechanisms which could lead to performance bottlenecks.
-------------------------------------------------------------
-📝 [Record 62/66]
-   👤 User ID      : user-000163286
-   ❓ QSN No       : 62
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code correctly overrides the equals and hashCode methods based on the rollNumber. The logic for comparing objects and generating hash codes is sound. However, there is an efficiency issue because using `Objects.hash(rollNumber)` in the hashCode method does not provide a good distribution of hash values, which could lead to poor performance with large sets of students.
-------------------------------------------------------------
-📝 [Record 63/66]
-   👤 User ID      : user-000163286
-   ❓ QSN No       : 63
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 85/100 (30/40/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student correctly overrides the toString method in the Product class. However, the method should return a String instead of printing it directly. The main issue is that the overridden toString method does not return anything (void), which means when you try to print an instance of Product using System.out.println(p1) or System.out.println(p2), it will call the default toString method from Object class, resulting in output like '[email protected]'. To fix this, the toString method should be modified to return a String instead of printing it.
-------------------------------------------------------------
-📝 [Record 64/66]
-   👤 User ID      : user-000163286
-   ❓ QSN No       : 64
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 80/100 (25/40/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The student's code has a logical error in calculating the median. The method `responseTimes.length()` is incorrect; it should be `responseTimes.length`. Additionally, the efficiency score is low because sorting the array unnecessarily increases the time complexity.
-------------------------------------------------------------
-📝 [Record 65/66]
-   👤 User ID      : user-000163286
-   ❓ QSN No       : 65
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 100/100 (30/50/20)
-   🏷️  Error Class  : Optimal Code
-   📖 Explanation  : The student's code is syntactically correct and logically sound. It reads an array of sales data, calculates the total and average sales, and prints them out. The efficiency score is low because it uses a for-each loop to iterate through the array, which is not necessary since the length of the array is known (7). A more efficient approach would be to use a traditional for-loop with an index variable.
-------------------------------------------------------------
-📝 [Record 66/66]
-   👤 User ID      : user-000163287
-   ❓ QSN No       : 66
-   🚀 Language     : Java
-   ⚖️  Total Grade  : 83/100 (28/40/15)
-   🏷️  Error Class  : Logical Fallacy
-   📖 Explanation  : The code has several syntax errors and logical issues. The 'SMSNotification' class incorrectly uses 'IMPLEMENTS' instead of 'implements'. The 'PushNotification' class uses 'printLN' instead of 'println', which is a syntax error in Java. Additionally, the logic for handling different notification types is correct, but the efficiency can be improved by using an enum or a more robust type system to avoid string comparisons.
-------------------------------------------------------------
-✅ All spreadsheet rows successfully analyzed!
-💾 File successfully saved as: Classified_Stage-1.xlsx
+🚀 STARTING LIVE MAP-EVALUATION LOOP
 
-📊 --- Language Distribution Metrics ---
-   🔹 Java: 64 submissions
-   🔹 C++: 1 submissions
-   🔹 Python: 1 submissions
---------------------------------------------------
+🔷 [RECORD 1 / 66]
+👤 Student User ID    : user-00036043
+❓ Question Number    : 1
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The submitted code correctly reads the city code and sequence number from user input and combines them into a booking ID without using the plus operator for string concatenation. It uses a char array to store the combined result, which is then converted back to a String and printed.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 8.5 / 10
+🏆 CALCULATED OVERALL GRADE: 9.40 / 10
+================================================================================
+🔷 [RECORD 2 / 66]
+👤 Student User ID    : user-00036044
+❓ Question Number    : 2
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The program correctly reads the city code and sequence number from user input and combines them into a booking ID using a StringBuilder. However, the order of appending is incorrect; it should be 'city + seq' instead of 'seq + city'.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 7.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.10 / 10
+================================================================================
+🔷 [RECORD 3 / 66]
+👤 Student User ID    : user-00036045
+❓ Question Number    : 3
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code is correct in its approach of using a StringBuilder to concatenate the city code and sequence number without using the plus operator. However, there are syntax errors in the code that prevent it from compiling.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 6.0 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 7.60 / 10
+================================================================================
+🔷 [RECORD 4 / 66]
+👤 Student User ID    : user-00036047
+❓ Question Number    : 4
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The program correctly reads the city code and sequence number from user input and combines them using a StringBuilder without using the plus operator for string concatenation. The output is correct.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.5 / 10
+   └─ Approach Taken Score: 8.5 / 10
+🏆 CALCULATED OVERALL GRADE: 9.55 / 10
+================================================================================
+🔷 [RECORD 5 / 66]
+👤 Student User ID    : user-00036048
+❓ Question Number    : 5
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The submitted code correctly reads the city code and sequence number from user input and combines them into a booking ID using a StringBuilder. It adheres to the requirement of not using the plus operator for string concatenation.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.5 / 10
+   └─ Approach Taken Score: 8.5 / 10
+🏆 CALCULATED OVERALL GRADE: 9.55 / 10
+================================================================================
+🔷 [RECORD 6 / 66]
+👤 Student User ID    : user-00026040
+❓ Question Number    : 6
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The program correctly reads the city code and sequence number from user input and combines them into a booking ID using a StringBuilder. However, there is a typo in the method name 'apend' which should be 'append'. This will cause a compile-time error.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 9.0 / 10
+   ├─ Code Quality Score  : 8.5 / 10
+   └─ Approach Taken Score: 10.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.05 / 10
+================================================================================
+🔷 [RECORD 7 / 66]
+👤 Student User ID    : user-00096240
+❓ Question Number    : 7
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The submitted code does not implement any functionality to read inputs, combine them into a booking ID, or output the result. It is an empty class with no methods or logic.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 0.0 / 10
+   ├─ Code Quality Score  : 2.0 / 10
+   └─ Approach Taken Score: 1.0 / 10
+🏆 CALCULATED OVERALL GRADE: 0.80 / 10
+================================================================================
+🔷 [RECORD 8 / 66]
+👤 Student User ID    : user-00096340
+❓ Question Number    : 8
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The submitted code does not address the question at all. It simply prints a statement about Java being a programming language without any relation to the task of creating a booking ID.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 0.0 / 10
+   ├─ Code Quality Score  : 0.0 / 10
+   └─ Approach Taken Score: 0.0 / 10
+🏆 CALCULATED OVERALL GRADE: 0.00 / 10
+================================================================================
+🔷 [RECORD 9 / 66]
+👤 Student User ID    : user-00096341
+❓ Question Number    : 9
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Language Mismatch
+💬 Correctness Feedback:
+   👉 CRITICAL FAILURE: Submitted solution is written in cpp, which violates the required semester exam language (Java).
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 0.0 / 10
+   ├─ Code Quality Score  : 0.0 / 10
+   └─ Approach Taken Score: 0.0 / 10
+🏆 CALCULATED OVERALL GRADE: 0.00 / 10
+================================================================================
+🔷 [RECORD 10 / 66]
+👤 Student User ID    : user-00096342
+❓ Question Number    : 10
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Language Mismatch
+💬 Correctness Feedback:
+   👉 CRITICAL FAILURE: Submitted solution is written in python, which violates the required semester exam language (Java).
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 0.0 / 10
+   ├─ Code Quality Score  : 0.0 / 10
+   └─ Approach Taken Score: 0.0 / 10
+🏆 CALCULATED OVERALL GRADE: 0.00 / 10
+================================================================================
+🔷 [RECORD 11 / 66]
+👤 Student User ID    : user-00096343
+❓ Question Number    : 11
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The program correctly reads the city code and sequence number from user input and combines them using a StringBuilder without using the plus operator for string concatenation. However, the program does not output the resulting booking ID.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 10.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.70 / 10
+================================================================================
+🔷 [RECORD 12 / 66]
+👤 Student User ID    : user-00096354
+❓ Question Number    : 12
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The program correctly reads the city code and sequence number from user input and combines them into a booking ID using a StringBuilder. However, the program does not handle edge cases such as invalid inputs (e.g., non-numeric sequence numbers) or leading/trailing spaces in the city code.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 7.5 / 10
+🏆 CALCULATED OVERALL GRADE: 8.20 / 10
+================================================================================
+🔷 [RECORD 13 / 66]
+👤 Student User ID    : user-00096355
+❓ Question Number    : 13
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code has a logical error in the condition check. The length of a string cannot be less than 0; it should be greater than or equal to 1. Additionally, the code does not handle cases where there are spaces between words correctly.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 3.0 / 10
+   ├─ Code Quality Score  : 4.0 / 10
+   └─ Approach Taken Score: 2.0 / 10
+🏆 CALCULATED OVERALL GRADE: 3.10 / 10
+================================================================================
+🔷 [RECORD 14 / 66]
+👤 Student User ID    : user-00096356
+❓ Question Number    : 14
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code is mostly correct, but it does not handle cases where there are multiple spaces between words or when the input is empty.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 7.0 / 10
+   ├─ Code Quality Score  : 8.0 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 7.70 / 10
+================================================================================
+🔷 [RECORD 15 / 66]
+👤 Student User ID    : user-00096357
+❓ Question Number    : 15
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code reads the full name, trims extra spaces, and correctly identifies the first and last characters. However, it does not print these characters to the console.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 7.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.10 / 10
+================================================================================
+🔷 [RECORD 16 / 66]
+👤 Student User ID    : user-00096358
+❓ Question Number    : 16
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code does not correctly print each character of the string individually. It only prints the entire string and then individual characters separately, which is incorrect.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 1.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.10 / 10
+================================================================================
+🔷 [RECORD 17 / 66]
+👤 Student User ID    : user-00096359
+❓ Question Number    : 17
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code attempts to print each character of the string, but it contains a bug. The loop condition should use `i < input.length()` instead of `i <= input.length()`, as this will cause an `IndexOutOfBoundsException` when trying to access `input.charAt(input.length())`. Additionally, the initial value of `i` should be 0.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 7.5 / 10
+   ├─ Code Quality Score  : 6.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 7.15 / 10
+================================================================================
+🔷 [RECORD 18 / 66]
+👤 Student User ID    : user-00096360
+❓ Question Number    : 18
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly prints each character of the string 'Hello' individually. It adheres to the requirements and is free of bugs.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.5 / 10
+   └─ Approach Taken Score: 8.5 / 10
+🏆 CALCULATED OVERALL GRADE: 9.55 / 10
+================================================================================
+🔷 [RECORD 19 / 66]
+👤 Student User ID    : user-00096361
+❓ Question Number    : 19
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The submitted code does not correctly normalize the product code. It only checks for leading or trailing spaces and prints an error message if found, but it does not trim the spaces or convert the code to upper case.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 4.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.70 / 10
+================================================================================
+🔷 [RECORD 20 / 66]
+👤 Student User ID    : user-00096362
+❓ Question Number    : 20
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The submitted code does not correctly normalize the product code. It replaces 'a' with 'A' and 'b' with 'B', which is incorrect for normalization. The code also does not trim spaces or convert the entire string to uppercase.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 1.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.10 / 10
+================================================================================
+🔷 [RECORD 21 / 66]
+👤 Student User ID    : user-00096363
+❓ Question Number    : 21
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly joins an array of words into a sentence using String.join(). It is correct and meets all requirements.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.5 / 10
+   └─ Approach Taken Score: 8.5 / 10
+🏆 CALCULATED OVERALL GRADE: 9.55 / 10
+================================================================================
+🔷 [RECORD 22 / 66]
+👤 Student User ID    : user-00096364
+❓ Question Number    : 22
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code does not join the words with spaces, resulting in a single concatenated string. The output will be 'fastreliableeasy' instead of 'fast reliable easy'.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 4.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.70 / 10
+================================================================================
+🔷 [RECORD 23 / 66]
+👤 Student User ID    : user-00096365
+❓ Question Number    : 23
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code does not correctly detect if a transaction is fraudulent. It only checks if the first character of the transaction matches any character in the suspicious word, which is incorrect. The variable 'isFraud' is used but never declared or initialized before being used.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 1.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.10 / 10
+================================================================================
+🔷 [RECORD 24 / 66]
+👤 Student User ID    : user-00096366
+❓ Question Number    : 24
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code incorrectly identifies a transaction as fraudulent based solely on whether it starts with 'SUSPECT'. It does not check if the substring is present anywhere in the transaction string, only at the beginning. This makes the fraud detection ineffective.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 1.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.10 / 10
+================================================================================
+🔷 [RECORD 25 / 66]
+👤 Student User ID    : user-00096367
+❓ Question Number    : 25
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code is correct as it combines the first and last names using the concat method of the String class, which does not use the + operator.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 8.0 / 10
+   └─ Approach Taken Score: 7.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.80 / 10
+================================================================================
+🔷 [RECORD 26 / 66]
+👤 Student User ID    : user-00096368
+❓ Question Number    : 26
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code is correct as it combines the first and last names using the concat method, which does not use the + operator.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 8.0 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.20 / 10
+================================================================================
+🔷 [RECORD 27 / 66]
+👤 Student User ID    : user-00096369
+❓ Question Number    : 27
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly checks if a customer ID is a palindrome. It uses a StringBuilder to reverse the string and compares it with the original string.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.30 / 10
+================================================================================
+🔷 [RECORD 28 / 66]
+👤 Student User ID    : user-00096370
+❓ Question Number    : 28
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code incorrectly checks if a string is a palindrome by comparing it to its reversed version using '==', which compares object references rather than their values. This will always return false. The correct approach should use the equals() method for string comparison.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 1.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.10 / 10
+================================================================================
+🔷 [RECORD 29 / 66]
+👤 Student User ID    : user-00096371
+❓ Question Number    : 29
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The implementation does not adhere to the Strategy pattern as it lacks an interface for payment strategies and a context class that uses these strategies.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 1.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.10 / 10
+================================================================================
+🔷 [RECORD 30 / 66]
+👤 Student User ID    : user-00096372
+❓ Question Number    : 30
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code is mostly correct but does not handle uppercase vowels. It also lacks a mechanism to ignore non-alphabetic characters.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 7.0 / 10
+   ├─ Code Quality Score  : 8.0 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 7.70 / 10
+================================================================================
+🔷 [RECORD 31 / 66]
+👤 Student User ID    : user-00096373
+❓ Question Number    : 31
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code does not correctly ignore case when counting vowels. The `sentence.toLowerCase();` line is missing an assignment to update the `sentence` variable. Additionally, the output format could be improved for readability.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 6.0 / 10
+   ├─ Code Quality Score  : 7.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 6.70 / 10
+================================================================================
+🔷 [RECORD 32 / 66]
+👤 Student User ID    : user-00096374
+❓ Question Number    : 32
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly reads an integer n and displays its multiplication table from n x 1 up to n x 10 using a while loop. However, it does not include spaces between the numbers in the output, which can make the table less readable.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 9.0 / 10
+   ├─ Code Quality Score  : 8.5 / 10
+   └─ Approach Taken Score: 10.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.05 / 10
+================================================================================
+🔷 [RECORD 33 / 66]
+👤 Student User ID    : user-00096375
+❓ Question Number    : 33
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code is incorrect because it only displays the multiplication table from n x 2 to n x 9, missing the n x 1 entry. The loop should start from 1 and go up to 10 inclusive.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 6.0 / 10
+   ├─ Code Quality Score  : 8.0 / 10
+   └─ Approach Taken Score: 7.0 / 10
+🏆 CALCULATED OVERALL GRADE: 6.80 / 10
+================================================================================
+🔷 [RECORD 34 / 66]
+👤 Student User ID    : user-00096376
+❓ Question Number    : 34
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code correctly demonstrates conditional flows based on income, credit score, and employment status. However, there is a logical error in the condition for 'Full-Time' employment status.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 7.5 / 10
+   └─ Approach Taken Score: 6.0 / 10
+🏆 CALCULATED OVERALL GRADE: 7.45 / 10
+================================================================================
+🔷 [RECORD 35 / 66]
+👤 Student User ID    : user-00096377
+❓ Question Number    : 35
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code demonstrates conditional flows using if-else and switch statements. However, there is a logical error in the switch statement where it falls through to subsequent cases without break statements.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 7.5 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.05 / 10
+================================================================================
+🔷 [RECORD 36 / 66]
+👤 Student User ID    : user-00096378
+❓ Question Number    : 36
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly demonstrates the use of for, while, and do-while loops to print a right-angled triangle pattern, Fibonacci sequence, and countdown sequence. There are no bugs in the implementation.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.30 / 10
+================================================================================
+🔷 [RECORD 37 / 66]
+👤 Student User ID    : user-00096379
+❓ Question Number    : 37
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The provided code only prints numbers from 1 to 5 using a while loop, which does not demonstrate the required pattern or sequence printing functionality.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 8.0 / 10
+   └─ Approach Taken Score: 4.0 / 10
+🏆 CALCULATED OVERALL GRADE: 4.20 / 10
+================================================================================
+🔷 [RECORD 38 / 66]
+👤 Student User ID    : user-00096380
+❓ Question Number    : 38
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly extracts the first character. However, it fails to handle cases where the input string has only one character, leading to an unnecessary else block that does nothing.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 7.5 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.05 / 10
+================================================================================
+🔷 [RECORD 39 / 66]
+👤 Student User ID    : user-00086392
+❓ Question Number    : 39
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly extracts the first and last characters from a string. However, it uses hardcoded string 'Deepika' instead of taking user input.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 7.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.10 / 10
+================================================================================
+🔷 [RECORD 40 / 66]
+👤 Student User ID    : user-00086393
+❓ Question Number    : 40
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly reverses the input string, but it does not follow the specific instruction to loop from end to start.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 7.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.10 / 10
+================================================================================
+🔷 [RECORD 41 / 66]
+👤 Student User ID    : user-00086395
+❓ Question Number    : 41
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code correctly counts the frequency of each character in a given string, ignoring spaces and case sensitivity. However, it does not handle punctuation or special characters.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 7.5 / 10
+   └─ Approach Taken Score: 6.0 / 10
+🏆 CALCULATED OVERALL GRADE: 7.45 / 10
+================================================================================
+🔷 [RECORD 42 / 66]
+👤 Student User ID    : user-00086311
+❓ Question Number    : 42
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code is incorrect. The method name should be 'main' instead of 'amin', and the data type for the string array should be 'String[]'.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 4.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.70 / 10
+================================================================================
+🔷 [RECORD 43 / 66]
+👤 Student User ID    : user-00086395
+❓ Question Number    : 43
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The binary search implementation is incorrect due to a syntax error in the calculation of mid. The correct formula should be `mid = (left + right) / 2`. Additionally, the array must be sorted for binary search to work correctly.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 5.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 4.0 / 10
+🏆 CALCULATED OVERALL GRADE: 4.20 / 10
+================================================================================
+🔷 [RECORD 44 / 66]
+👤 Student User ID    : user-00016326
+❓ Question Number    : 44
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code is mostly correct, but it contains an invalid data type for the 'id' field. The 'toString()' method provides a readable output format.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 7.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.10 / 10
+================================================================================
+🔷 [RECORD 45 / 66]
+👤 Student User ID    : user-00016315
+❓ Question Number    : 45
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code does not correctly implement the requirements. The Circle class extends both Shape and Printable, which is invalid in Java as a class cannot extend multiple classes. Additionally, the print method implementation has incorrect syntax.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 4.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.70 / 10
+================================================================================
+🔷 [RECORD 46 / 66]
+👤 Student User ID    : user-00016314
+❓ Question Number    : 46
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly prints the first 10 numbers of the Fibonacci sequence. However, it lacks a return type for the `printFibonacci` method and does not handle edge cases such as negative input values.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.5 / 10
+   ├─ Code Quality Score  : 7.0 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.15 / 10
+================================================================================
+🔷 [RECORD 47 / 66]
+👤 Student User ID    : user-00016317
+❓ Question Number    : 47
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The student correctly demonstrated constructor overloading by providing multiple constructors with different parameters. The code is correct and meets the requirements of the question.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.30 / 10
+================================================================================
+🔷 [RECORD 48 / 66]
+👤 Student User ID    : user-00016323
+❓ Question Number    : 48
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly demonstrates the use of an anonymous class to handle a button click event in a GUI application. It creates a JFrame, adds a JButton with an ActionListener implemented as an anonymous class, and displays a message dialog when the button is clicked.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.30 / 10
+================================================================================
+🔷 [RECORD 49 / 66]
+👤 Student User ID    : user-00016327
+❓ Question Number    : 49
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code is mostly correct, but there is a typo in the class name 'ButtonClickhandler' which should be 'ButtonClickHandler'. The nested class correctly implements the ActionListener interface and handles button click events. However, the main method lacks proper exception handling and does not check if the frame is null before setting its properties.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 7.5 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.05 / 10
+================================================================================
+🔷 [RECORD 50 / 66]
+👤 Student User ID    : user-00016320
+❓ Question Number    : 50
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code attempts to sort an array of strings using insertion sort, but it fails because the inventory is declared as a String instead of a String[]. The insertionSort method cannot be applied directly to a String.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 2.0 / 10
+   ├─ Code Quality Score  : 3.0 / 10
+   └─ Approach Taken Score: 4.0 / 10
+🏆 CALCULATED OVERALL GRADE: 2.70 / 10
+================================================================================
+🔷 [RECORD 51 / 66]
+👤 Student User ID    : user-00016322
+❓ Question Number    : 51
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly identifies whether a reading is even or odd and assigns the appropriate tier. However, it lacks error handling for non-integer inputs.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 7.5 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.05 / 10
+================================================================================
+🔷 [RECORD 52 / 66]
+👤 Student User ID    : user-00016323
+❓ Question Number    : 52
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The program does not print multiplication tables for all numbers up to N. It only prints the table for 1 through 5.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 3.0 / 10
+   ├─ Code Quality Score  : 7.0 / 10
+   └─ Approach Taken Score: 6.0 / 10
+🏆 CALCULATED OVERALL GRADE: 4.80 / 10
+================================================================================
+🔷 [RECORD 53 / 66]
+👤 Student User ID    : user-00016324
+❓ Question Number    : 53
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code generates a pyramid pattern correctly, but it does not follow the specific instruction to prompt the user for the number of rows. The default value is hardcoded instead of being taken from user input.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 7.0 / 10
+   ├─ Code Quality Score  : 8.5 / 10
+   └─ Approach Taken Score: 6.0 / 10
+🏆 CALCULATED OVERALL GRADE: 7.25 / 10
+================================================================================
+🔷 [RECORD 54 / 66]
+👤 Student User ID    : user-00016325
+❓ Question Number    : 54
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The Order class has been created with the required fields and methods. However, there is a logical error in the checkApproval method where it always returns true regardless of the total amount.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 7.5 / 10
+   └─ Approach Taken Score: 6.0 / 10
+🏆 CALCULATED OVERALL GRADE: 7.45 / 10
+================================================================================
+🔷 [RECORD 55 / 66]
+👤 Student User ID    : user-00016326
+❓ Question Number    : 55
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly extends the Employee class and overrides the calculateBonus() and displayInfo() methods for the Manager class. It also demonstrates polymorphism by using an Employee reference to call the overridden method on a Manager object.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.30 / 10
+================================================================================
+🔷 [RECORD 56 / 66]
+👤 Student User ID    : user-00016327
+❓ Question Number    : 56
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code is correct and meets all requirements.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.5 / 10
+   └─ Approach Taken Score: 8.5 / 10
+🏆 CALCULATED OVERALL GRADE: 9.55 / 10
+================================================================================
+🔷 [RECORD 57 / 66]
+👤 Student User ID    : user-00016328
+❓ Question Number    : 57
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The implementation correctly overrides equals and hashCode based on studentId, ensuring that two students with the same studentId are considered equal. The code is correct.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.30 / 10
+================================================================================
+🔷 [RECORD 58 / 66]
+👤 Student User ID    : user-00016329
+❓ Question Number    : 58
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The implementation correctly follows the singleton pattern using a static inner class. The configuration properties are initialized in the constructor and can be retrieved through getter methods.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.5 / 10
+   └─ Approach Taken Score: 8.5 / 10
+🏆 CALCULATED OVERALL GRADE: 9.55 / 10
+================================================================================
+🔷 [RECORD 59 / 66]
+👤 Student User ID    : user-00016330
+❓ Question Number    : 59
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The provided code does not implement a Factory Pattern. Instead, it contains a sorting algorithm (Bubble Sort) and a main method to test the sorting functionality. The code is not relevant to the question asked.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 0.0 / 10
+   ├─ Code Quality Score  : 2.0 / 10
+   └─ Approach Taken Score: 1.0 / 10
+🏆 CALCULATED OVERALL GRADE: 0.80 / 10
+================================================================================
+🔷 [RECORD 60 / 66]
+👤 Student User ID    : user-00016331
+❓ Question Number    : 60
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code is correct and meets the requirement of accessing event properties through an inner class. The ActionListener inner class correctly accesses the count variable from the outer class.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 9.30 / 10
+================================================================================
+🔷 [RECORD 61 / 66]
+👤 Student User ID    : user-000163285
+❓ Question Number    : 61
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Needs Revision
+💬 Correctness Feedback:
+   👉 The code attempts to implement a Singleton pattern but has a bug in the getInstance() method where it does not return the instance if it is already created.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 6.0 / 10
+   ├─ Code Quality Score  : 7.0 / 10
+   └─ Approach Taken Score: 8.0 / 10
+🏆 CALCULATED OVERALL GRADE: 6.70 / 10
+================================================================================
+🔷 [RECORD 62 / 66]
+👤 Student User ID    : user-000163286
+❓ Question Number    : 62
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The implementation of equals and hashCode is correct, as it uses the rollNumber for comparison and hashing. The code correctly prevents duplicate entries in a HashSet.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 10.0 / 10
+   ├─ Code Quality Score  : 9.5 / 10
+   └─ Approach Taken Score: 8.5 / 10
+🏆 CALCULATED OVERALL GRADE: 9.55 / 10
+================================================================================
+🔷 [RECORD 63 / 66]
+👤 Student User ID    : user-000163286
+❓ Question Number    : 63
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The method toString is overridden correctly, but it should return a String instead of printing to the console.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 7.5 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.05 / 10
+================================================================================
+🔷 [RECORD 64 / 66]
+👤 Student User ID    : user-000163286
+❓ Question Number    : 64
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly computes the minimum and maximum response times but incorrectly calculates the median due to a typo in `responseTimes.length()` which should be `responseTimes.length`. The median calculation is otherwise correct.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.5 / 10
+   ├─ Code Quality Score  : 7.0 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.15 / 10
+================================================================================
+🔷 [RECORD 65 / 66]
+👤 Student User ID    : user-000163286
+❓ Question Number    : 65
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The code correctly calculates the total and average of the sales data provided in the array. However, it does not read the values from user input as instructed.
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 9.0 / 10
+   └─ Approach Taken Score: 7.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.10 / 10
+================================================================================
+🔷 [RECORD 66 / 66]
+👤 Student User ID    : user-000163287
+❓ Question Number    : 66
+🎯 Mandated Language  : Java
+📊 Evaluation Status  : Optimal Code
+💬 Correctness Feedback:
+   👉 The implementation is mostly correct, but there are some issues with case sensitivity and method naming. The SMSNotification class incorrectly uses 'IMPLEMENTS' instead of 'implements', and the PushNotification class has a typo in the print statement (printLN should be println).
+🔢 Score Breakdown   :
+   ├─ Completeness Score  : 8.0 / 10
+   ├─ Code Quality Score  : 7.5 / 10
+   └─ Approach Taken Score: 9.0 / 10
+🏆 CALCULATED OVERALL GRADE: 8.05 / 10
+================================================================================
 
-🏷️ --- Error Category Breakdown Analytics ---
-   🔸 Optimal Code: 34 occurrences
-   🔸 Logical Fallacy: 29 occurrences
-   🔸 Syntax Error: 2 occurrences
-   🔸 Edge-Case Failure: 1 occurrences
---------------------------------------------------
+⚡ RUNNING GLOBAL SEMESTER BATCH ANALYTICS PASS...
+
+████████████████████████████████████████████████████████████████████████████████
+📋 MASTER BATCH EVALUATION SUMMARY REPORT
+████████████████████████████████████████████████████████████████████████████████
+📈 Class Average Score      : 6.54 / 10
+🏷️  Overall Quality Label    : Average
+⚠️  Common Errors Identified : Lack of detail, inconsistent formatting, and unclear language.
+💪 Core Class Strengths     : The review provides a clear structure and covers all required points.
+📉 Core Class Weaknesses    : Some sections are vague or not well-supported with evidence.
+💡 Pedagogical Guidance     : Revise the text to ensure consistency, add more specific details, and improve clarity.
+████████████████████████████████████████████████████████████████████████████████

@@ -1,72 +1,164 @@
-Local Student Code Language Detector & Evaluation Pipeline
-An automated, offline evaluation system that ingests student data sheets, processes code submissions through a local Large Language Model (LLM) utilizing contextual problem statements, enforces rigid JSON scoring schemas, tracks execution in real-time, and generates multi-dimensional grading reports.
+# Semester Code Submission Evaluator
 
-🚀 Architectural Overview
-Manually evaluating massive batches of student programming assignments to check code validity and structural correctness is tedious and prone to syntax oversight. This pipeline transitions that process into a fully automated, edge-computed workflow.
+Automated grading pipeline that evaluates student code submissions (from `Stage-1.xlsx`) against a mandated semester programming language, using a locally-hosted LLM (`qwen2.5-coder:7b-instruct` via Ollama) for grading.
 
-By leveraging Qwen 2.5 Coder 7B Instruct locally via Ollama, the script analyzes the Assignment Question and the Student Code Block side-by-side. This dual-context approach guarantees high accuracy. By shifting to a strict, native JSON-constrained generation engine, the pipeline reliably extracts the target language, applies programmatic numeric grading metrics, assigns structured error tags, and generates clear technical explanations—without any cloud computing costs or data privacy risks.
+---
 
-📐 The 5-Step Pipeline Architecture
-The program initializes from main() and flows sequentially through five distinct engineering layers:
+## Overview
 
-1. Data Ingestion Layer
-Dynamically identifies file extensions (.csv versus .xlsx/.xls) and utilizes high-performance pandas buffers to read local source sheets directly into an active memory DataFrame.
+For each student submission, the pipeline:
 
-2. Structural Validation & Cleansing
-Header Sanitation: Runs string trimming (.str.strip()) across all sheet headers to eliminate accidental leading or trailing white spaces.
+1. Verifies the code is written in the semester's mandated language.
+2. If it isn't → scores it `0` across all criteria, with no grading call made.
+3. If it is → grades it for completeness, code quality, and approach using the LLM, and computes a weighted `overall_score`.
+4. After all rows are processed, generates a class-wide summary (common errors, strengths, weaknesses, recommendations).
 
-Column Enforcement: Validates the absolute existence of four foundational columns: QSN No, User ID, Question, and Actual Code. If any are missing, execution stops safely.
+The mandated language is controlled by a single constant:
 
-Compute Optimization: Filters out and drops all empty rows, NaN values, or blank spaces within the Actual Code column to prevent wasting local LLM compute cycles on missing inputs.
+```python
+SEMESTER_LANGUAGE = "Java"
+```
 
-3. Contextual JSON Inference Engine
-Constructs a deterministic system instruction set mapped against a compound evaluation prompt template. The engine sets LLM parameters to a temperature of 0.0 to force rigid, predictable classifications. By explicitly supplying a structured JSON formatting argument to the Ollama API layer, token generation is physically constrained to output a clean, valid JSON object, eliminating parsing crashes.
+---
 
-4. Real-Time Telemetry & Log Loop
-Iterates through records one by one. Instead of running silently, it functions like a live telemetry server dashboard, immediately outputting structured multi-line metric blocks containing the user's ID, problem number, identified language, individual score breakdowns, automated total grade aggregates, and error categories directly to the terminal terminal window the millisecond an item finishes processing.
+## Why this isn't "just an LLM call"
 
-5. Multi-Column Analytics Export Layer
-Compiles the structured JSON output array into seven distinct dataset column fields:
+A 7B-parameter local model is a capable grader, but it is **not reliable enough on its own** to also decide pass/fail on language compliance — asking one model to both judge language and produce exact structured scores compounds two different failure modes: misjudging edge-case code, and drifting from the required JSON format. To get this reliable, the pipeline separates those concerns into two isolated stages.
 
-Detected Language — The programming language identified.
+### Stage 1 — Deterministic Language Detection (no LLM involved)
 
-Syntax Score (Max 30) — Compilation and well-formed structural status scoring.
+Language compliance is decided **before** any grading call is made, using pure static analysis — no generative model, no hallucination risk:
 
-Logic Score (Max 50) — Functional algorithmic compliance tracking.
+1. **Regex signature matching** — each supported language has a weighted set of strong syntactic markers (e.g. Java: `public class`, `System.out.println(`; Python: `def ...():`, `self`; C++: `#include <iostream>`, `std::`). The submission is scored against every language's signature set.
+2. **Pygments lexer fallback** — if the regex pass is inconclusive (low or tied scores), a secondary deterministic check using Pygments' lexer-guessing heuristic is used as a cross-check. Still not an LLM — a well-established, reproducible static analysis library.
+3. **Manual review fallback** — if both signals are inconclusive (e.g. a 3-line snippet with no distinguishing syntax), the system does **not guess**. It's flagged for human review rather than risking a wrong auto-pass or auto-fail.
 
-Efficiency Score (Max 20) — Design optimality and performance verification.
+If the detected language doesn't match `SEMESTER_LANGUAGE`, the row is scored `0` with a fixed critical-failure message, and **the grading LLM call is skipped entirely** for that row.
 
-Total Grade (Max 100) — Summation aggregate calculated dynamically by the pipeline (Syntax + Logic + Efficiency).
+### Stage 2 — Grading (LLM, but hardened)
 
-Error Category — Classifications tracking structural issues (Syntax Error, Logical Fallacy, Edge-Case Failure, or Optimal Code).
+Only code that passes the language gate reaches the LLM. That call is hardened in several ways:
 
-Technical Explanation — Precise analysis outlining what the student wrote and where they made mistakes.
+| Safeguard | What it prevents |
+|---|---|
+| **JSON Schema–constrained decoding** (Ollama `format` as a schema, not just `"json"`) | The model is structurally prevented from omitting required fields or returning the wrong data type — enforced at the token-generation level. |
+| **Post-decode validation** | Even schema-valid responses are checked for realistic values (scores within 0–10, non-empty feedback) before being accepted. |
+| **Automatic retry (up to 2x)** | If validation fails, the model is re-prompted with the specific error instead of the invalid result being used. |
+| **Adaptive self-consistency** | See below. |
+| **Score arithmetic recomputed in Python** | `overall_score` is never trusted from the model — always recomputed from the three component scores via the fixed formula, so LLM arithmetic drift can never affect final grades. |
 
-To protect core data integrity, it leaves your original file completely untouched and exports a fresh file prefixed with Classified_. It then generates terminal-side distribution summaries for language choices and error tag categories.
+#### Adaptive self-consistency
 
-🛠️ Project Stack & Package Breakdown
-This project utilizes isolated virtual environment architecture (.venv) to lock dependencies:
+Each submission is graded **once** by default. That single pass's `overall_score` is checked against a borderline band:
 
-pandas: Acts as the data manipulation engine, handling the heavy lifting of parsing, data cleaning, and multi-column dataset expansions.
+```python
+BORDERLINE_SCORE_LOW  = 6.0
+BORDERLINE_SCORE_HIGH = 9.0
+```
 
-openpyxl: The behind-the-scenes read/write engine that allows Python to speak fluently with modern Microsoft Excel (.xlsx) files.
+- **Outside this band** (clearly strong or clearly weak) → the single pass is trusted, no extra compute spent.
+- **Inside this band** → two additional passes are run and merged via **median** score, since single-pass noise near a grading cutoff is the case most likely to change the outcome. If the passes disagree by more than `SCORE_VARIANCE_FLAG_THRESHOLD` (2.5 points), the row is explicitly flagged `[FLAGGED FOR MANUAL REVIEW]` in the feedback rather than silently averaged away.
 
-requests: Handles the underlying local network handshake, transmitting payloads via HTTP POST directly to Ollama's local engine.
+This keeps compute reasonable on modest hardware while still catching the noise that matters most — right around the pass/fail boundary — instead of paying a 3x cost on every row regardless of how clear-cut it is.
 
-os & sys: Manages pathing checks, determines file existence safety nets, and processes environment state terminations.
+---
 
-⚙️ Initial Setup & Local Deployment
-1. Environment Initialization
-Clone the repository, enter the directory, and spin up your isolated environment:
-# Create the virtual environment
-python -m venv .venv
+## What this guarantees vs. what it doesn't
 
-# Activate on Windows (PowerShell)
-.\.venv\Scripts\Activate.ps1
+**Guaranteed (structural/deterministic — cannot fail):**
+- Language compliance decisions are 100% reproducible and hallucination-free.
+- Output JSON always matches the required schema.
+- Scores are always within valid range.
+- `overall_score` arithmetic is always correct.
+- Genuinely ambiguous code is flagged for humans instead of auto-graded incorrectly.
 
-# Install core dependencies
-pip install pandas openpyxl requests
+**Not guaranteed (inherent to any LLM, including larger ones):**
+- The *qualitative accuracy* of grading judgment (e.g. catching a subtle logic bug) still depends on the model's coding ability. Self-consistency reduces random noise in scoring, but doesn't raise the model's underlying competence. For higher grading accuracy specifically, the only lever is a stronger model — this architecture makes the pipeline **reliable**, not the grading **smarter**.
 
-2. Running the System Pipeline
-Ensure your Ollama server is running locally with the target model pulled (ollama pull qwen2.5-coder:7b-instruct), place your data sheet named Practice App-API Testing Report.xlsx into the root project directory, and fire it up:
-# python classify_code.py 
+---
+
+## Model context window
+
+`qwen2.5-coder:7b-instruct` natively supports a 32,768-token context window. However:
+
+- **Ollama defaults `num_ctx` to 2048 tokens** unless explicitly overridden, which can silently truncate long prompts.
+- This project sets `num_ctx` explicitly via `MODEL_MAX_CONTEXT` to avoid that.
+- The value is tuned to the actual hardware running it, not the model's theoretical max — see below.
+
+```python
+MODEL_MAX_CONTEXT = 4096
+```
+
+Real prompts in this pipeline (master prompt + question + one code submission) run roughly 600–2000 tokens, so 4096 gives comfortable headroom without requiring more VRAM than a typical laptop GPU has available.
+
+### Why not the full 32768?
+
+On hardware with limited VRAM (e.g. a 4GB GPU), the 7B model's weights alone use most of the available VRAM. Pushing the KV cache to a 32K context on top of that forces Ollama to offload layers to CPU, which can turn a few-second grading call into a much slower one — especially painful when running an entire class batch. If you're running on a GPU with significantly more VRAM (12GB+), `MODEL_MAX_CONTEXT` can be raised safely.
+
+---
+
+## Setup
+
+### Prerequisites
+- Python 3.10+ (avoid brand-new Python releases like 3.14 until third-party packages catch up — you may hit `ModuleNotFoundError` issues even after `pip install` due to interpreter/venv path mismatches)
+- [Ollama](https://ollama.com) installed and running locally
+- The `qwen2.5-coder:7b-instruct` model pulled:
+  ```bash
+  ollama pull qwen2.5-coder:7b-instruct
+  ```
+
+### Install dependencies
+
+```bash
+pip install pandas requests pygments openpyxl
+```
+
+> If `pip install` reports a package as "already satisfied" but the script still raises `ModuleNotFoundError`, your terminal's `python`/`pip` are likely pointing at two different interpreters. Force it explicitly:
+> ```bash
+> python -m pip install <package>
+> ```
+
+### Input file
+
+Place `Stage-1.xlsx` in the same directory as the script, with at minimum these columns:
+
+| Column | Description |
+|---|---|
+| `QSN No` | Question number |
+| `User ID` | Student identifier |
+| `Question` | Question text |
+| `Actual Code` | Student's submitted code |
+
+---
+
+## Usage
+
+```bash
+python evaluate_submissions.py
+```
+
+The script will:
+1. Load and validate the spreadsheet.
+2. Run the language gate + grading loop per row, printing live progress.
+3. Generate and print a class-wide summary report at the end.
+
+---
+
+## Configuration reference
+
+| Constant | Purpose | Default |
+|---|---|---|
+| `SEMESTER_LANGUAGE` | The single control point for the mandated language | `"Java"` |
+| `MODEL_MAX_CONTEXT` | Ollama `num_ctx`, tuned to available hardware | `4096` |
+| `BORDERLINE_SCORE_LOW` / `BORDERLINE_SCORE_HIGH` | Score band that triggers adaptive self-consistency rechecks | `6.0` – `9.0` |
+| `BORDERLINE_RECHECK_RUNS` | Total passes (including the first) used for the median when a row is borderline | `3` |
+| `SCORE_VARIANCE_FLAG_THRESHOLD` | Cross-run disagreement that triggers a manual-review flag | `2.5` |
+| `MAX_RETRIES` | Retries on schema-invalid LLM responses | `2` |
+
+---
+
+## Known limitations
+
+- Language detection signatures currently cover Java, Python, C, C++, C#, JavaScript, and TypeScript. Add more entries to `LANGUAGE_SIGNATURES` / `LANGUAGE_ALIASES` for other languages.
+- Extremely short or minimal-syntax code snippets may be flagged for manual review rather than auto-classified — this is intentional (see Stage 1 above), not a bug.
+- Grading quality is bounded by the underlying 7B model's coding judgment; this pipeline maximizes *reliability*, not raw grading intelligence.
